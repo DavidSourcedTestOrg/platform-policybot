@@ -7,7 +7,7 @@ configMapGenerator:
       annotations:
         argocd.argoproj.io/hook: PreSync
     files:
-      - run.sh=bin/ensure-secrets.sh
+      - run.sh=bin/ensure-secret.sh
 
 resources:
 - deployment.yaml
