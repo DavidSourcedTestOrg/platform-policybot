@@ -16,7 +16,7 @@ spec:
       - name: bot
         image: palantirtechnologies/policy-bot:1.25.0
         ports:
-        - containerPort: 80
+        - containerPort: 8080
           name: web
         resources:
           limits:
