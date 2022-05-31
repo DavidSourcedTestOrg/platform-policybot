@@ -20,8 +20,8 @@ spec:
           name: web
         resources:
           limits:
-            memory: 512m
-            cpu: 1
+            memory: 1Gi
+            cpu: 2
         env:
           - name: NAMESPACE
             valueFrom:
