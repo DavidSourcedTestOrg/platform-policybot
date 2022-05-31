@@ -12,6 +12,10 @@ spec:
       labels:
         app: policy-bot
     spec:
+      volumes:
+        - name: policy-bot-cm
+          configMap:
+            name: policy-bot-cm
       containers:
       - name: bot
         image: palantirtechnologies/policy-bot:1.25.0
@@ -22,6 +26,10 @@ spec:
           limits:
             memory: 1Gi
             cpu: 1
+        volumeMounts:
+          - name: policy-bot-cm
+            mountPath: /secrets/policy-bot.yml
+            subPath: policy-bot.yml
         env:
           - name: NAMESPACE
             valueFrom:
