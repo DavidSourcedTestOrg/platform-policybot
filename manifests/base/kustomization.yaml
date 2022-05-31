@@ -2,16 +2,16 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: policy-bot
 
-configMapGenerator:
-  - name: ensure-secrets-cm
-    options:
-      annotations:
-        argocd.argoproj.io/hook: PreSync
-    files:
-      - run.sh=bin/ensure-secret.sh
+# configMapGenerator:
+#   - name: ensure-secrets-cm
+#     options:
+#       annotations:
+#         argocd.argoproj.io/hook: PreSync
+#     files:
+#       - run.sh=bin/ensure-secret.sh
 
 resources:
 - namespace.yaml
 - deployment.yaml
 - service.yaml
-- ensure-secret-hook.yaml
+# - ensure-secret-hook.yaml
