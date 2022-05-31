@@ -2,10 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: policy-bot
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
 spec:
   type: LoadBalancer
   selector:
     app: policy-bot
   ports:
-  - port: 443
+  - port: 80
     targetPort: web
