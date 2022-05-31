@@ -11,3 +11,5 @@ configMapGenerator:
 
 resources:
 - deployment.yaml
+- service.yaml
+- ensure-secret-hook.yaml
