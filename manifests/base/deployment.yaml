@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: policy-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: policy-bot
+  template:
+    metadata:
+      labels:
+        app: policy-bot
+    spec:
+      containers:
+      - name: bot
+        image: palantirtechnologies/policy-bot:1.25.0
+        ports:
+        - containerPort: 80
