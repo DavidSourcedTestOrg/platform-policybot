@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
+
 if [ -f "/opt/github-app-secrets/GITHUB_APP_WEBHOOK_SECRET" ]; then
     echo "Already provisioned secrets"
     exit 0
 fi
+
+cd "$(mktemp -d)"
 
 openssl genrsa -out key.pem 4096
 
